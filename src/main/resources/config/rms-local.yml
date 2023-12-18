@@ -1,6 +1,6 @@
 logging:
   file:
-    name: logs/api.log
+    name: logs/rms-local3.log
     max-size: 500MB
     max-history: 10
   level:
