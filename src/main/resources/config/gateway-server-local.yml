@@ -1,0 +1,32 @@
+logging:
+  file:
+    name: logs/gateway-local.log
+    max-size: 500MB
+    max-history: 10
+  level:
+    root: info
+    org.hibernate.SQL: debug
+#    org.hibernate.type: trace
+
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      routes:
+      - id: rms
+        uri: lb://rms
+        predicates:
+        - Path=/rms/**
+#          filters:
+#            - RewritePath=/rms/(?<segment>.*), /$\{segment}
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
