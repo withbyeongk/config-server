@@ -6,7 +6,6 @@ logging:
   level:
     root: info
     org.hibernate.SQL: debug
-#    org.hibernate.type: trace
 
 spring:
   application:
@@ -15,12 +14,11 @@ spring:
     gateway:
       routes:
       - id: rms
-        uri: lb://rms
+        uri: lb://RMS
         predicates:
-        - Path=/rms/**
-#          filters:
-#            - RewritePath=/rms/(?<segment>.*), /$\{segment}
-
+          - Path=/rms/**
+        filters:
+          - RewritePath=/rms/(?<segment>.*), /$\{segment}
 
 eureka:
   instance:
