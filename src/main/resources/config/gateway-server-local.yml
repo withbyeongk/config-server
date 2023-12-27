@@ -1,11 +1,11 @@
 logging:
   file:
-    name: logs/gateway-local.log
+    name: logs/gateway-server.log
     max-size: 500MB
     max-history: 10
   level:
     root: info
-    org.hibernate.SQL: debug
+    com.iron.gateway-server: debug
 
 spring:
   application:
