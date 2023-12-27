@@ -1,28 +1,16 @@
 logging:
   file:
-    name: logs/gateway-server.log
+    name: logs/authentication.log
     max-size: 500MB
     max-history: 10
   level:
     root: info
-    com.iron.gateway-server: debug
+    com.iron.authentication: debug
 
 spring:
   config:
     import:
       - classpath:/config/datasource-local.yml
-  application:
-    name: gateway-server
-  cloud:
-    gateway:
-      routes:
-      - id: rms
-        uri: lb://RMS
-        predicates:
-          - Path=/rms/**
-        filters:
-          - RewritePath=/rms/(?<segment>.*), /$\{segment}
-
 eureka:
   instance:
     prefer-ip-address: true

@@ -5,7 +5,7 @@ logging:
     max-history: 10
   level:
     root: info
-    org.com.iron.eureka-server: debug
+    com.iron.eureka-server: debug
 
 spring:
   application:
