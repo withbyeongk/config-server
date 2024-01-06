@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:20049/irondb
+    url: jdbc:mariadb://mariadb:3306/msa
     username: root
-    password: '{cipher}880fd2424b6fcfefdbe59a2c01b3393df1618d408250a3c435779eb43d9d8bef'
+    password: '{cipher}83dec4bd65b7ec6fc5934bbb2a8c0576b32ff837e89ab3f0ed598a0967ee43bf'
   jpa:
     hibernate:
       ddl-auto: none
